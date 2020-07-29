@@ -69,6 +69,14 @@ def predict_fn(input_data, model):
     #       You should produce two variables:
     #         data_X   - A sequence of length 500 which represents the converted review
     #         data_len - The length of the review
+    
+    test_data = convert_and_pad(word_dict, review_to_words(test_review)) # convert_and_pad_data(word_dict, train_X)
+    test_data_review, test_data_length = test_data
+
+    test_data = [test_data_length] + test_data_review
+    test_data = np.array([test_data])
+
+    process_data =  convert_and_pad(word_dict, review_to_words(test_review)) # convert_and_pad_data(word_dict, train_X)
 
     data_X = None
     data_len = None
