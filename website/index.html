@@ -14,6 +14,9 @@
              var xhr = new XMLHttpRequest();
              xhr.onload = function() {
                  var result = parseFloat(xhr.responseText);
+                 console.log('the result here', result)
+                 result = Math.round(parseFloat(result))
+                 
                  var resultElement = document.getElementById('result');
                  if (result == 0) {
                      resultElement.className = 'bg-danger';
